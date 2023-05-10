@@ -1,10 +1,10 @@
-package com.study.repo;
+package com.project.ServerSide;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RepoApplicationTests {
+class ServerSideApplicationTests {
 
 	@Test
 	void contextLoads() {
