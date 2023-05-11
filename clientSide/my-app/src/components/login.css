@@ -13,3 +13,33 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
+body
+{
+    background-image:url(student.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#R
+{
+    color: aliceblue;
+}
+#E
+{
+    color: aliceblue;
+}
+#P
+{
+    color: aliceblue;
+}
+#F
+{
+    color: aliceblue;
+}
+#s
+{
+    color: aliceblue;
+}
+#d
+{
+    color: aliceblue;
+}
