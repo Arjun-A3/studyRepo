@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import login from './components/login';
+import loginst from './components/loginst';
+import logint from './components/logint';
+
 import signup from './components/signup'
 import main from './components/main';
 
-function App() {
+function App() {                                                                                             
   return (
-   <div>{main()}</div> 
+   <div>{logint()}</div> 
   );
 }
 

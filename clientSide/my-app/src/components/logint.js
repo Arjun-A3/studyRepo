@@ -1,13 +1,25 @@
 
-import './login.css';
+import './logint.css';
 
 
-function login() {
+function logint() {
   return (
     <section class="vh-100">
       <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-md-9 col-lg-6 col-xl-5">
+          <div class="mb-4 text-center text-xl-start px-md-8 px-lg-19 px-xl-0">
+                            <h1 class="display-3 fw-bold mb-3 ls-sm ">
+                                <span class="text-primary">StudyRepo</span> <br></br> Place to find Answers...
+                            </h1>
+                            
+                    
+                            <a href="" class="btn btn-dark" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Teacher ?</a>
+                           
+                            <div class="mt-5">
+                    
+                            </div>
+                        </div>
         
           </div>
           <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -104,4 +116,4 @@ function login() {
     </section>
   );
 }
-export default login;
+export default logint;
