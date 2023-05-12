@@ -9,22 +9,14 @@ function loginst() {
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-md-9 col-lg-6 col-xl-5">
           <div class="mb-4 text-center text-xl-start px-md-8 px-lg-19 px-xl-0">
-                            <h1 class="display-3 fw-bold mb-3 ls-sm ">
-                                <span class="text-primary">Geeks UI</span>, Modern
-                                Learning Management.
+          <h1 class="display-3 fw-bold mb-3 ls-sm ">
+                                <span class="text-primary">StudyRepo</span> <br></br> Place to Get Answer....
                             </h1>
-                            <p class="mb-6 lead pe-lg-6">
-                                Suitable for Educational Web, LMS, Training Center,
-                                Courses Hub, Online Course, College, Academy,
-                                University, School.
-                            </p>
+                            
                     
-                            <a href="https://bit.ly/geeksui" class="btn btn-dark" target="_blank" title="Buy Geeks"><i class="bi bi-cart-check-fill me-2"></i>Buy Geeks</a>
-                            <a href="#demo" class="btn btn-outline-white ms-2" title="Geeks Preview">Preview<i class="bi bi-box-arrow-up-right ms-2"></i></a>
+                            <a href="loginst.js" class="btn btn-light" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Teacher ?</a>
+                           
                             <div class="mt-5">
-                                <p>
-                                    </p><div class="badge bg-light text-dark me-2"><i class="bi bi-star-fill text-warning me-1"></i>5.0</div>Over <span class="text-dark fw-bold">600+</span> developers used GeeksUI.
-                                <p></p>
                             </div>
                         </div>
           </div>

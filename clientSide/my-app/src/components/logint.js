@@ -10,11 +10,11 @@ function logint() {
           <div class="col-md-9 col-lg-6 col-xl-5">
           <div class="mb-4 text-center text-xl-start px-md-8 px-lg-19 px-xl-0">
                             <h1 class="display-3 fw-bold mb-3 ls-sm ">
-                                <span class="text-primary">StudyRepo</span> <br></br> Place to find Answers...
+                                <span class="text-primary">StudyRepo</span> <br></br> To Teach is to Touch a Life Forever....
                             </h1>
                             
                     
-                            <a href="" class="btn btn-dark" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Teacher ?</a>
+                            <a href="loginst.js" class="btn btn-light" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Student ?</a>
                            
                             <div class="mt-5">
                     
@@ -42,7 +42,7 @@ function logint() {
 
              
 
-
+<br></br>
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control form-control-lg"
                   placeholder="Enter a valid email address" />
