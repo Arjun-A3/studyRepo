@@ -1,5 +1,5 @@
-
-function fun()
+import './main.css';
+function main()
 {
   return (
     <div>
@@ -173,3 +173,5 @@ function fun()
  </div>
   );
 }
+
+export default main;
