@@ -3,31 +3,16 @@ function main()
 {
   return (
     <div>
-     
-    <div class="navbar navbar bg- shadow-sm" style={{backgroundColor:'#AFDFE5'}}>
-      <div class="container">
-          <input type="text" placeholder=" search here"/>
-          <button class="btn btn-light rounded-pill px-3" type="button">Home</button>
-       
-      </div>
-    </div>
-    
- 
-  
-  <main>
-  
+  <main>  
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light" style={{fontFamily:'Castellar', fontSize:'50px'}}>Study Respository</h1>
-          <p class="lead text-body-secondary" style={{fontFamily:'Perpetua', fontSize:'25px'}}><b>A study repository mini project using ReactJS, MongoDB, and Bootstrap is a web application that allows users to store and manage their study materials notes study-related documents...</b> </p>
-         
+          <h1 class="fw-light" style={{fontFamily:'Castellar', fontSize:'50px', color:'yellow'}}><b>Study Respository</b></h1>
+          <p class="lead text-body-secondary" style={{fontFamily:'Perpetua', fontSize:'25px'}}><b>A study repository mini project using ReactJS, MongoDB, and Bootstrap is a web application that allows users to store and manage their study materials notes study-related documents...</b> </p>         
         </div>
       </div>
     </section>
-  
       <div class="container">
-  
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
           <div class="col">
             <div class="card shadow-sm">

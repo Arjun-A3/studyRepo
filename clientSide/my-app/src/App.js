@@ -8,7 +8,7 @@ import main from './components/main';
 
 function App() {                                                                                             
   return (
-   <div>{logint()}</div> 
+   <div>{main()}</div> 
   );
 }
 
