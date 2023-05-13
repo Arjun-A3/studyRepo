@@ -7,7 +7,7 @@ function main()
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light" style={{fontFamily:'Castellar', fontSize:'50px', color:'yellow'}}><b>Study Respository</b></h1>
+          <h1 class="fw-light" style={{fontFamily:'Castellar', fontSize:'50px', color:'#B46060'}}><b>Study Respository</b></h1>
           <p class="lead text-body-secondary" style={{fontFamily:'Perpetua', fontSize:'25px'}}><b>A study repository mini project using ReactJS, MongoDB, and Bootstrap is a web application that allows users to store and manage their study materials notes study-related documents...</b> </p>         
         </div>
       </div>

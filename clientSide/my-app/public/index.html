@@ -10,6 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+     <link rel="stylesheet" href="style.css">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,35 +26,61 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Studyrepo</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   </head>
-  <body style="background-color: #659dbd;">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <body style="background-image: url(image.jpg);">
+    <div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+      <label for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+    </div>
+    <div class="sidebar_menu">
+      <div class="logo">
+        <a href="#">StudyRepo</a>
+          </div>
+        <div class="btn_two">
+          <label for="check">
+            <i class="fas fa-times"></i>
+          </label>
+        </div>
+      <div class="menu">
+        <ul>
+          <li><i></i>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <i></i>
+            <a href="#">About us</a>
+          </li>
+          <li>
+            <i></i>
+            <a href="#">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="color: red
-        ;"><b>Study Repostory</b></a>
+        
+        <!-- <a class="navbar-brand" href="#" style="color: red
+        ;"><b>Study Repostory</b></a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <form class="d-flex" role="search">
+          <!-- <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
-      </div>
-    </nav>
-    <br><br> <br><br> <br>
+      </div>   
+
+ 
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="root"></div></div>
   </body>
 </html>
