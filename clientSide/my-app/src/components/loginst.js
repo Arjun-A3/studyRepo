@@ -2,7 +2,8 @@
 import './loginst.css';
 
 
-function loginst() {
+export function Loginst() {
+  
   return (
     <div class="vh-100" id="st">
       <div class="container-fluid h-custom">
@@ -68,7 +69,7 @@ function loginst() {
               <div class="text-center text-lg-start mt-4 pt-2">
                 <button type="button" class="btn btn-primary btn-lg"
                 >Login</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0" id="d"><b>Don't have an account?</b> <a href="#!"
+                <p class="small fw-bold mt-2 pt-1 mb-0" id="d"><b>Don't have an account?</b> <a href="/signup"
                   class="link-danger">Register</a></p>
               </div>
               <div class="divider d-flex align-items-center my-4">
@@ -114,4 +115,3 @@ function loginst() {
     </div>
   );
 }
-export default loginst;

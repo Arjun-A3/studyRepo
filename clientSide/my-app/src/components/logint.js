@@ -2,7 +2,7 @@
 import './logint.css';
 
 
-function logint() {
+ export function Logint() {
   return (
     <section class="vh-100">
       <div class="container-fluid h-custom">
@@ -116,4 +116,3 @@ function logint() {
     </section>
   );
 }
-export default logint;
