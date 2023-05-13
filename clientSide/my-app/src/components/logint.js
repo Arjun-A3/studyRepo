@@ -14,8 +14,10 @@ import './logint.css';
                             </h1>
                             
                     
-                            <a href="loginst.js" class="btn btn-light" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Student ?</a>
-                           
+                            {/* <a href="loginst.js" class="btn btn-light" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Student ?</a> */}
+                            <a href="//"> <div id="outer">
+  <div class="button_slide slide_down">Student ?
+</div></div></a>
                             <div class="mt-5">
                     
                             </div>
@@ -68,8 +70,8 @@ import './logint.css';
               </div>
 
               <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="button" class="btn btn-primary btn-lg"
-                >Login</button>
+              <a href="/" class="bn13">Login</a>
+
                 <p class="small fw-bold mt-2 pt-1 mb-0" id="d"><b>Don't have an account?</b> <a href="#!"
                   class="link-danger">Register</a></p>
               </div>

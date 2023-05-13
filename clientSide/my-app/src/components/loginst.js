@@ -15,8 +15,13 @@ export function Loginst() {
                             </h1>
                             
                     
-                            <a href="loginst.js" class="btn btn-light" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Teacher ?</a>
-                           
+                            {/* <a href="logint.js" class="btn btn-light" target="_blank"><i class="bi bi-cart-check-fill me-2"></i>Teacher ?</a> */}
+                          <a href="//"> <div id="outer">
+  <div class="button_slide slide_down">Teacher ?
+</div></div></a>
+
+
+
                             <div class="mt-5">
                             </div>
                         </div>
@@ -67,8 +72,9 @@ export function Loginst() {
               </div>
 
               <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="button" class="btn btn-primary btn-lg"
-                >Login</button>
+                {/* <button type="button" class="btn btn-primary btn-lg"
+                >Login</button> */}
+                <a href="/" class="bn13">Login</a>
                 <p class="small fw-bold mt-2 pt-1 mb-0" id="d"><b>Don't have an account?</b> <a href="/signup"
                   class="link-danger">Register</a></p>
               </div>
