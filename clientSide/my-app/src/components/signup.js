@@ -1,6 +1,6 @@
 import './signup.css';
 
-function signup() {
+export function Signup() {
     return (
         <form >
             <div class="x" >
@@ -66,4 +66,3 @@ function signup() {
     );
 
 }
-export default signup;

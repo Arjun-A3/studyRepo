@@ -2,7 +2,8 @@
 import './loginst.css';
 
 
-function loginst() {
+export function Loginst() {
+  
   return (
     <div class="vh-100" id="st">
       <div class="container-fluid h-custom">
@@ -114,4 +115,3 @@ function loginst() {
     </div>
   );
 }
-export default loginst;

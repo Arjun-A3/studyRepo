@@ -1,5 +1,5 @@
 import './main.css';
-function main()
+export function Main()
 {
   return (
     <div>
@@ -160,4 +160,3 @@ function main()
   );
 }
 
-export default main;
