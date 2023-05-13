@@ -11,12 +11,7 @@ import { Main } from './components/main';
 
 function App() {                                                                                             
   return (
-   <Routes>
-    <Route path="/" element={<Loginst />}/>
-    <Route path="/signup" element={<Signup />}/>
-    <Route path="/logint" element={<Logint />}/>
-    
-   </Routes>
+
   );
 }
 
