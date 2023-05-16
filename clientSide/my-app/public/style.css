@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+body{
+  min-height: 100vh;
+}
 /* .main_box{
   position: relative;
  background: url('side.jpeg') right no-repeat;
