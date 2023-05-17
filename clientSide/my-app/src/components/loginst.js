@@ -3,7 +3,8 @@ import { useState } from 'react';
 import './loginst.css';
 
 
-function Loginst() {
+function Loginst(props) {
+  const {getInputDetails} = props;
 
   const [details , setDetails] = useState(
     {
@@ -18,10 +19,11 @@ function Loginst() {
     setDetails((prev)=> {return {...prev, [name]:value}})   
   }
   
+  
   const handleInput = (e) =>{
-    
+  
     e.preventDefault();
-    console.log(details);  
+    getInputDetails(details);  
   }
  
 
@@ -77,7 +79,7 @@ function Loginst() {
                 </div>
                 <a href="#!">Forgot password?</a>
               </div>
-              <a href="/main" className="bn13" type='Submit'>Login</a>
+              <a href="/" className="bn13" ><button type='submit'>Login</button></a>
 
               <div>
                 {/* <button type='Submit' className="bn13">Login</button> */}
