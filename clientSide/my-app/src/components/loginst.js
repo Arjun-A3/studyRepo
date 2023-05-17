@@ -38,9 +38,9 @@ function Loginst() {
           <h1 className="display-3 fw-bold mb-3 ls-sm ">
                                 <span className="text-primary">StudyRepo</span> <br></br> Place to Get Answer....
                             </h1>
-                            
-                    
-                            <a href="/loginteacher" className="btn btn-light" target="_blank"><i className="bi bi-cart-check-fill me-2"></i>Teacher ?</a>
+                                   
+                    <a href="/loginteacher" target="_blank">   <div className="button_slide slide_down" >
+                        <i className="bi bi-cart-check-fill me-2"></i>Teacher ?</div></a>
                            
                             <div className="mt-5">
                             </div>
@@ -77,10 +77,10 @@ function Loginst() {
                 </div>
                 <a href="#!">Forgot password?</a>
               </div>
+              <a href="/main" className="bn13" type='Submit'>Login</a>
 
-              <div className="text-center text-lg-start mt-4 pt-2">
-                <button type='Submit' className="btn btn-primary btn-lg" 
-                >Login</button>
+              <div>
+                {/* <button type='Submit' className="bn13">Login</button> */}
                 <p className="small fw-bold mt-2 pt-1 mb-0" id="d"><b>Don't have an account?</b> <a href="/signup"
                   className="link-danger">Register</a></p>
               </div>

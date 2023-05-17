@@ -32,8 +32,10 @@ import './logint.css';
                             </h1>
                             
                     
-                            <a href="/" className="btn btn-light" target="_blank"><i className="bi bi-cart-check-fill me-2"></i>Student ?</a>
-                           
+                            {/* <a href="/" className="btn btn-light" target="_blank"><i className="bi bi-cart-check-fill me-2"></i>Student ?</a> */}
+                            <a href="/" id='lf'> <div id="outer">
+  <div class="button_slide slide_down">Student ?
+</div></div></a>
                             <div className="mt-5">
                     
                             </div>
@@ -82,15 +84,20 @@ import './logint.css';
                    <b> Remember me</b>
                   </label>
                 </div>
+                
                 <a href="#!" id="FP">Forgot password?</a>
               </div>
 
               <div className="text-center text-lg-start mt-4 pt-2">
-                <button type="submit" className="btn btn-primary btn-lg" 
-                >Login</button>
+                {/* <button type="submit" className="btn btn-primary btn-lg" 
+                >Login</button> */}
+              
+                 <div class="text-center text-lg-start mt-4 pt-2">
+              <a href="/Main" class="bn13">Login</a>
+
                 <p className="small fw-bold mt-2 pt-1 mb-0" id="d"><b>Don't have an account?</b> <a href="/Signup"
                   className="link-danger">Register</a></p>
-              </div>
+              </div></div>
               <div className="divider d-flex align-items-center my-4">
                 <p className="text-center fw-bold mx-3 mb-0">Or</p>
               </div>
