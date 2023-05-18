@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './logint.css';
+import './cssFile/logint.css';
 
 
  export function Logint() {

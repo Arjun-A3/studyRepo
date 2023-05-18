@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import './loginst.css';
+import './cssFile/loginst.css';
 
 
 function Loginst(props) {
@@ -19,9 +19,8 @@ function Loginst(props) {
     setDetails((prev)=> {return {...prev, [name]:value}})   
   }
   
-  
   const handleInput = (e) =>{
-  
+
     e.preventDefault();
     getInputDetails(details);  
   }

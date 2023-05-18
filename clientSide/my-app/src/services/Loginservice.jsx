@@ -1,10 +1,15 @@
-  // import axios from "axios";
+// import axios from 'axios';
 
-const BASE_URL_API_SPRING = "http://localhost:8080/";
+// const BASE_URL_API_SPRING = "http://localhost:8080/";
 
-function Loginservice(props) {
-  console.log(props);
-  
-}
+// import React, { Component } from 'react'
 
-export default Loginservice
+// export class Loginservice extends Component {
+ 
+//   passSignup(Details){
+//     return axios.post(BASE_URL_API_SPRING,Details);
+//   }
+
+// }
+
+// export default Loginservice
