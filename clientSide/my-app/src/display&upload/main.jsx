@@ -22,7 +22,9 @@ export function Main()
                 <p className="card-text">COMPUTER SCIENCE AND BUSINESS SYSTEMS</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
-                    <button type="button" className="btn btn-primary">view</button>
+                    <a href='/csbs'>
+                        <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -35,7 +37,9 @@ export function Main()
                 <p className="card-text">COMPUTER SCIENCE ENGINEERING</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                    <a href='/cse'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -49,7 +53,9 @@ export function Main()
                 <p className="card-text">ARTIFICIAL INTENLLIGENCE AND DATA SCIENCE</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
-                    <button type="button" className="btn btn-primary">view</button>
+                  <a href='/aids'>
+                        <button type="button" className="btn btn-primary">view</button>
+                    </a>                  
                   </div>
                 </div>
               </div>
@@ -64,7 +70,9 @@ export function Main()
                 <p className="card-text">ELECTRONICS AND COMMUNICATION ENGINEERING</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                  <a href='/ece'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -78,7 +86,9 @@ export function Main()
                 <p className="card-text">MECHANICAL ENGINEERING</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                  <a href='/mech'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -92,7 +102,9 @@ export function Main()
                 <p className="card-text">ELECTRICAL AND ELECTRONIC ENGINEERING</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                  <a href='/eee'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -107,7 +119,9 @@ export function Main()
                 <p className="card-text">AERONAUTICAL ENGINEERING</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                  <a href='/aero'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -121,7 +135,9 @@ export function Main()
                 <p className="card-text">AGRICULTURAL ENGINEERING</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                  <a href='/agri'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -135,7 +151,9 @@ export function Main()
                 <p className="card-text">MASTER OF BUSINESS ADMINISTRATION</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="btn-group">
+                  <a href='/mba'>
                     <button type="button" className="btn btn-primary">view</button>
+                    </a>
                   </div>
                 </div>
               </div>

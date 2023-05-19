@@ -72,14 +72,14 @@ height: 100%;
   .bn13 {
     display: inline-block;
     padding: 0.65em 1.6em;
-    border: 3px solid #ffffff;
+    /* border: 3px solid #ffffff; */
     margin: 0 0.3em 0.3em 0;
     border-radius: 0.12em;
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    color: #ffffff;
+    color: #d81a1a;
     text-align: center;
     transition: all 0.2s;
     animation: bn13bouncy 5s infinite linear;
@@ -87,7 +87,7 @@ height: 100%;
   }
   
   .bn13:hover {
-    background-color: white;
+    background-color: rgb(113, 121, 240);
     color: #000000;
   }
   

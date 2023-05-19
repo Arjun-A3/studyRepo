@@ -5,7 +5,7 @@ export function Upload() {
   return (
     <div>
     <br/><br/><br/><br/>
-	<form >
+	<form id='WWE' >
         
 		<h1>Upload Documents</h1>
         <div className='container'>
