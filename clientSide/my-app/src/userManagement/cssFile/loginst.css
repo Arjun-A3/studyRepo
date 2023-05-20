@@ -1,3 +1,6 @@
+
+
+
 .divider:after,
 .divider:before {
 content: "";
@@ -45,17 +48,17 @@ height: 100%;
 {
     color: aliceblue;
 }
-.button_slide {
-    color: #FFF;
-    border: 2px solid rgb(216, 2, 134);
-    border-radius: 0px;
+.AKM {
+    color: #f8f4f4;
+    border: 2px groove grey;
+    border-radius: 10px;
     padding: 18px 36px;
     display: inline-block;
     font-family: "Lucida Console", Monaco, monospace;
-    font-size: 14px;
+    font-size: 20px;
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #D80286;
+    box-shadow: inset 0 0 0 0  rgb(113, 121, 240);
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
@@ -66,15 +69,15 @@ height: 100%;
    
   }
   
-.slide_down:hover {
-    box-shadow: inset 0 100px 0 0 #D80286;
+.AKM:hover {
+    box-shadow: inset 0 100px 0 0  rgb(113, 121, 240);;
   }
   .bn13 {
     display: inline-block;
+    border: 2px groove rgb(128, 128, 128);
     padding: 0.65em 1.6em;
-    border: 3px solid #ffffff;
     margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
+    border-radius: 10px;
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
@@ -87,7 +90,7 @@ height: 100%;
   }
   
   .bn13:hover {
-    background-color: white;
+    background-color: rgb(113, 121, 240);
     color: #000000;
   }
   
