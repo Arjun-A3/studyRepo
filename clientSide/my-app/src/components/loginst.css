@@ -13,16 +13,15 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
-
- #FP
+#st
 {
-    color: aliceblue;
+    width: auto;
 }
-#outer{
-    display:flex;
-    align-items: start;
+#R
+{
+    color: #FFE4C0;
 }
-/*#E
+#E
 {
     color: aliceblue;
 }
@@ -41,7 +40,11 @@ height: 100%;
 #d
 {
     color: aliceblue;
-} */
+}
+#QQ
+{
+    color: aliceblue;
+}
 .button_slide {
     color: #FFF;
     border: 2px solid rgb(216, 2, 134);

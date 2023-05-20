@@ -29,6 +29,7 @@ function App() {
 
 
   return (
+
     <Routes>
       <Route path='/' element = {<Loginst />}/>
       <Route path='/Signup' element = {<Signup/>}/>
@@ -50,6 +51,8 @@ function App() {
      <Route path='/main/csbs/sem1' element={<Subdisplay/>}/>
      <Route path='/main/csbs/sem1/bcvs' element={<UnitDisplay/>}/>
     </Routes>
+
+
 
   );
 }
