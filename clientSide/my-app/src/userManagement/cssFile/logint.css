@@ -18,6 +18,10 @@ height: 100%;
 {
     color: aliceblue;
 }
+#outer{
+    display:flex;
+    align-items: start;
+}
 /*#E
 {
     color: aliceblue;
