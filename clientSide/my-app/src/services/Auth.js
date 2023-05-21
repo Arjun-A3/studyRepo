@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API_URL = "";
+const API_URL = "http://localhost:8080/api/auth/";
 
 
 const login =(details) => {
-    console.log(details);
-    return axios.post(API_URL+"login",details)
+    const {email,password} = details;
+    return axios.post(API_URL+"login",{email,password})
     .then((Response)=>{
         if(Response.data.username)
         localStorage.setItem("User",JSON.stringify(Response.data));
@@ -20,8 +20,8 @@ const logout = () => {
 }
 
 const signup = (details) => {
-    return axios.post(API_URL+"signup",details);
-
+    const {id , username , email , password , role} = details;
+    return axios.post(`${API_URL}signup`,JSON.stringify(details));
 }
 const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));

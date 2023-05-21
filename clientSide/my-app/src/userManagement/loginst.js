@@ -10,7 +10,7 @@ function Loginst(props) {
     {
       email: "",
       password: "",
-      des:"student",
+      role:"student",
     }
   );
 
@@ -21,8 +21,7 @@ function Loginst(props) {
   }
 
   const handleInput = (e) => {
-    e.preventDefault();
-    
+    e.preventDefault(); 
     getInputDetails(details);
   }
 

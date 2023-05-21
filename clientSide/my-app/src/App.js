@@ -1,9 +1,6 @@
 
 import { Routes,Route } from 'react-router-dom';
 
-
-
-
 //pages
 import Loginst from './userManagement/loginst';
 import { Signup } from './userManagement/signup';
@@ -14,20 +11,8 @@ import Subdisplay from './display&upload/subDisplay';
 import UnitDisplay from './display&upload/unitDisplay';
 import Department from './dept/Department';
 
-
-
-
-
-
-
-
-
-
-
 function App() {   
   
-
-
   return (
 
     <Routes>
@@ -51,9 +36,6 @@ function App() {
      <Route path='/main/csbs/sem1' element={<Subdisplay/>}/>
      <Route path='/main/csbs/sem1/bcvs' element={<UnitDisplay/>}/>
     </Routes>
-
-
-
   );
 }
 

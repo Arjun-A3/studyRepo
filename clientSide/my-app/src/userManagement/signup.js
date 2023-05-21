@@ -1,16 +1,23 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './cssFile/signup.css';
+import { AuthService } from '../services/Auth';
 
 export function Signup() {
+    const form = useRef();
+  const checkBtn = useRef();
+
     const [details , setDetails] = useState(
         {
-            fullName:"",
+            id:"",
+            username:"",
             email:"",
             password:"",
-            options:"",
-
+            role:"",
         }
     );
+    const [successful, setSuccessful] = useState(false);
+  const [message, setMessage] = useState("");
+    
     const handleChange = (event) =>{
         const {name,value} = event.target;
         setDetails((prev)=>{
@@ -20,16 +27,36 @@ export function Signup() {
     }
     const handleInput = (event) =>{
      event.preventDefault();
-     if(!(details.password===details.password2))
-     {
-        alert("please type the same password");
+     
+     setMessage("");
+     setSuccessful(false);
+ 
+    
+ 
+     if (message === "") {
+        AuthService.signup(details)
+        .then(
+         (response) => {
+            console.log("eureka");
+           setMessage(response.data.message);
+           setSuccessful(true);
+         },
+         (error) => {
+           const resMessage =
+             (error.response &&
+               error.response.data &&
+               error.response.data.message) ||
+             error.message ||
+             error.toString();
+             console.log("Unsuccess");
+ 
+           setMessage(resMessage);
+           setSuccessful(false);
+         }
+       );
      }
-     else{
-        console.log(details);
-
-     }
-
     }
+    
     return (
         <section className="vh-100" style={{ backgroundcolor: "#eee" }}>
               
@@ -45,20 +72,20 @@ export function Signup() {
                                         <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
                                         <form onSubmit={handleInput} className="mx-1 mx-md-4">
-                                            <div className="btn-group d-flex flex-row align-items-center mb-5" data-toggle="buttons" id='B'>
+                                            <div   className="btn-group d-flex flex-row align-items-center mb-5" data-toggle="buttons" id='B'>
                                                 
                                                 <label className="btn btn-primary">
-                                                    <input type="radio" name="options" id="Teacher" onChange={handleChange} autoComplete="off" value="T"/> Teacher
+                                                    <input type="radio" name="role" id="Teacher" onChange={handleChange} autoComplete="off" value="Teacher"/> Teacher
                                                 </label>
                                                 <label className="btn btn-primary">
-                                                    <input type="radio" name="options" id="Student" onChange={handleChange} autoComplete="off" value="S"/> Student
+                                                    <input type="radio" name="role" id="Student" onChange={handleChange} autoComplete="off" value="Student"/> Student
                                                 </label>
                                             </div>
 
                                             <div className="d-flex flex-row align-items-center mb-4">
                                                 <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                 <div className="form-outline flex-fill mb-0">
-                                                    <input type="text" id="form3Example1c" className="form-control" name='fullName' onChange={handleChange}/>
+                                                    <input type="text" id="form3Example1c" className="form-control" name='username' onChange={handleChange}/>
                                                     <label className="form-label" htmlFor="form3Example1c">Your Name</label>
                                                 </div>
                                             </div>
