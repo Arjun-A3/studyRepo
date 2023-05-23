@@ -1,5 +1,7 @@
 package com.project.ServerSide.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.ServerSide.model.LoadFile;
 import com.project.ServerSide.Repository.FileService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -25,8 +27,13 @@ public class FileController {
     private FileService fileService;
 
     @PostMapping("/upload")
-    public ResponseEntity<?> upload(@RequestParam("file")MultipartFile file) throws IOException {
-        return new ResponseEntity<>(fileService.addFile(file), HttpStatus.OK);
+    public ResponseEntity<?> upload(@RequestParam("file")MultipartFile file,@RequestParam("metadata") String metadata) throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode metaJson = objectMapper.readTree(metadata);
+
+
+        return new ResponseEntity<>(fileService.addFile(file,metaJson), HttpStatus.OK);
     }
 
     @GetMapping("/download/{id}")
@@ -35,6 +42,22 @@ public class FileController {
 
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(loadFile.getFileType() ))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + loadFile.getFilename() + "\"")
+                .body(new ByteArrayResource(loadFile.getFile()));
+    }
+    @GetMapping("/download")
+    public ResponseEntity<ByteArrayResource> download(@RequestParam("sem") String sem,
+                                                      @RequestParam("subject") String subject,
+                                                      @RequestParam("unit") String unit,
+                                                      @RequestParam("dept") String dept) throws IOException {
+        LoadFile loadFile = fileService.downloadFileByMetadata(sem, subject, unit, dept);
+
+        if (loadFile == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(loadFile.getFileType()))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + loadFile.getFilename() + "\"")
                 .body(new ByteArrayResource(loadFile.getFile()));
     }

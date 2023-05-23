@@ -1,6 +1,7 @@
 package com.project.ServerSide.Repository;
 
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.client.gridfs.model.GridFSFile;
@@ -13,6 +14,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsOperations;
+import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StreamUtils;
@@ -20,7 +22,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 //import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -34,11 +38,18 @@ public class FileService {
     @Autowired
     private GridFsOperations operations;
 
-    public String addFile(MultipartFile upload) throws IOException {
+    public String addFile(MultipartFile upload, JsonNode metaJson) throws IOException {
 
         //define additional metadata
         DBObject metadata = new BasicDBObject();
         metadata.put("fileSize", upload.getSize());
+        Iterator<String> fieldNames = metaJson.fieldNames();
+        while (fieldNames.hasNext()) {
+            String fieldName = fieldNames.next();
+            JsonNode fieldValue = metaJson.get(fieldName);
+            metadata.put(fieldName, fieldValue.asText());
+        }
+
 
         //store in database which returns the objectID
         Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(), metadata);
@@ -107,4 +118,31 @@ public class FileService {
         }
 
     }
+    public LoadFile downloadFileByMetadata(String sem, String subject, String unit, String dept) {
+        // Create the query based on the metadata fields
+        Query query = new Query();
+        query.addCriteria(Criteria.where("metadata.sem").is(sem)
+                .and("metadata.subject").is(subject)
+                .and("metadata.unit").is(unit)
+                .and("metadata.dept").is(dept));
+
+        // Execute the query and retrieve the file from GridFS
+        GridFSFile gridFSFile = operations.findOne(query);
+        if (gridFSFile == null) {
+            return null; // File not found
+        }
+
+        // Retrieve the file data from GridFS
+        GridFsResource resource = operations.getResource(gridFSFile);
+        byte[] fileData;
+        try (InputStream inputStream = resource.getInputStream()) {
+            fileData = IOUtils.toByteArray(inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read file data: " + e.getMessage(), e);
+        }
+
+        // Create the LoadFile object with the retrieved data
+        return new LoadFile(fileData, gridFSFile.getFilename(),gridFSFile.getMetadata());
+    }
+
 }

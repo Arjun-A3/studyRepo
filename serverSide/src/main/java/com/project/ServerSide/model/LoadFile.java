@@ -1,9 +1,14 @@
 package com.project.ServerSide.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Collection;
-
+@Getter
+@Setter
+@ToString
 @Document(collection = "CSBS")
 public class LoadFile {
 
@@ -12,38 +17,11 @@ public class LoadFile {
     private String fileSize;
     private byte[] file;
 
+
+    public LoadFile(byte[] fileData, String filename, org.bson.Document metadata) {
+    }
+
     public LoadFile() {
-    }
 
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public String getFileType() {
-        return fileType;
-    }
-
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
-    }
-
-    public String getFileSize() {
-        return fileSize;
-    }
-
-    public void setFileSize(String fileSize) {
-        this.fileSize = fileSize;
-    }
-
-    public byte[] getFile() {
-        return file;
-    }
-
-    public void setFile(byte[] file) {
-        this.file = file;
     }
 }
