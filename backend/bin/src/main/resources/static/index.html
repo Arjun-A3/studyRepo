@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport">
+    <title>File Upload Example</title>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+    <noscript>
+        <h2 style="text-align: center;">Sorry! Browser does not support Javascript.</h2>
+    </noscript>
+    <div class="file-container">
+        <div class="file-upload-header">
+            <h2>File Upload / Download Example</h2>
+        </div>
+        <div class="file-upload">
+            <form id="fileUploadForm">
+                <h3>File Upload</h3>
+                dept:<input type="text" id = "dept">
+                sem :<input type="text" id = "sem">
+                sub :<input type="text" id = "sub">
+                <input type="file" name="file" id="fileUploadInput" class="file-input" required>
+                <button type="submit" class="submit-btn">Upload</button>
+            </form>
+        </div>
+
+        <div class="file-upload">
+            <div id="downloadZip">
+                <h3>Download All Files as a Zip</h3>
+                <a href="http://localhost:8088/file/downloadZipFile" style="text-decoration: none; padding-top: 5px" class="submit-btn">Download As Zip</a>
+            </div>
+        </div>
+
+        <div class="file-download">
+            <div id="downloadFileUrl"></div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
