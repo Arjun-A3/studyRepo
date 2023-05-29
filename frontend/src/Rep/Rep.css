@@ -1,0 +1,98 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+  .container {
+    background: white;
+    min-height: 100vh;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  nav a {
+      font-size: 40px;
+      color: #fff;
+      text-decoration: none;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  nav {
+      position: fixed;
+      left: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100vh;
+           fallback for old browsers
+     background: #3a68be;
+     
+     Chrome 10-25, Safari 5.1-6
+     background: -webkit-linear-gradient(to bottom right, rgb(51, 91, 136), rgb(7, 38, 105));
+     
+     W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+     background: linear-gradient(to bottom right, rgb(149, 147, 251), rgb(4, 14, 99))
+  }
+  
+  section {
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 0;
+      opacity: 0;
+      transition: all ease-in .5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  } 
+  
+  section h1 {
+      color: red;
+      font-size: 50px;
+      text-transform: uppercase;
+      opacity: 0;
+  }
+  
+  Styles applied on trigger
+  section:target {
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+  }
+  
+  section:target h1 {
+      opacity: 0;
+      animation: 2s fadeIn forwards .5s;
+  }
+  
+  #first {
+    background-color: white;
+
+  }
+  #second {
+    background-color: white;
+  }
+  
+  #third {
+    background-color: white;
+  }
+  
+  #fourth {
+    background-color: white;
+  }
+  
+  @keyframes fadeIn {
+      100% { opacity:1 }
+  }
+  nav:hover{
+    width: 4cm;
+  }
+  h1{
+    color: #0d2c70;
+  } */
