@@ -7,8 +7,6 @@ import { Login } from '../Login/Login';
 
 const API_URL = "http://localhost:8080/auth/"
 export function Signup(){
-
-    let [tologin,settologin] = useState(false);
     const [details , setDetails] = useState(
       {
           "firstName":"",
@@ -18,8 +16,7 @@ export function Signup(){
           "desc":"",
       }
   );
-  const [successful, setSuccessful] = useState(false);
-const [message, setMessage] = useState("");
+  
   
   const handleChange = (event) =>{
       const {name,value} = event.target;
@@ -29,22 +26,28 @@ const [message, setMessage] = useState("");
       
   }
   const handleInput = (event) =>{
-   event.preventDefault();   
-   setMessage("");
-   setSuccessful(false);
+   event.preventDefault();
    console.log(details);
-
-   axios.post(`${API_URL}signup`,details)
+   if(details.desc === "Faculty")
+   {
+    const response = window.prompt("What is the Faculty Passcode")
+    if(response === "9979")
+    {
+      axios.post(`${API_URL}signup`,details)
    .then((Response)=>{if(Response)window.location = "/"})
    .catch(e => alert("Failed to register,please contact dev"))
+    }
+    else
+    {
+      alert("Wrong Passcode !!!")
+      window.location.reload();
+    }
+  }
   }
 
-    if(tologin){
-       return (
-        <Navigate to='/Login'/>
-       );
+    
        
-    }
+    
     return(
       <div class="vh-100 gradient-custom">
       <div class="container1 py-5 h-100">

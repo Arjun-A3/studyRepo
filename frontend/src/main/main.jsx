@@ -3,8 +3,8 @@ import './main.css';
 
 
 const YourComponent = () => {
-  const [semIndex , setSemIndex] = useState();
-  const [deptIndex , setDeptIndex] = useState();
+  const [semIndex, setSemIndex] = useState();
+  const [deptIndex, setDeptIndex] = useState();
   const options1 = [
     'SELECT DEPARTMENT',
     'COMPUTER SCIENCE AND BUSINESS SYSTEM',
@@ -46,7 +46,7 @@ const YourComponent = () => {
     semester: '',
     subject: ''
   });
-  const Logout = () =>{
+  const Logout = () => {
     localStorage.removeItem("User");
     window.location.reload();
   }
@@ -58,7 +58,7 @@ const YourComponent = () => {
       [type]: event.target.value
     });
   };
-  const handleSemChange = (event, type) => { 
+  const handleSemChange = (event, type) => {
     setSelectedOptions({
       ...selectedOptions,
       [type]: event.target.value
@@ -70,9 +70,9 @@ const YourComponent = () => {
       [type]: event.target.value
     });
   };
-  
-  
-  
+
+
+
 
   const handleDownload = () => {
     const url = "http://localhost:8080/file/downloadbyDSS/" + selectedOptions.department + selectedOptions.semester + selectedOptions.subject;
@@ -134,12 +134,12 @@ const YourComponent = () => {
             <button className="button" onClick={handleDownload}>
               Download
             </button>
-            
+
           </div>
-          
+
         )}
         <h3><button onClick={Logout}>Logout</button></h3>
-       
+
       </div>
     </div>
   );
