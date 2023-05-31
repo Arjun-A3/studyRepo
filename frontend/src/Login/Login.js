@@ -1,31 +1,18 @@
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import log from './log.png';
-import {Link, json, useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import axios from 'axios';
-import {Navigate, Outlet} from "react-router-dom";
+import { Navigate, useNavigate } from 'react-router-dom';
+import RequireAuthst from '../Routeconfig/RequireAuthst';
 const API_URL = "http://localhost:8080/auth/login"
-let isLoggedIn = "";
-
-
-export const PrivateRoutes = () => {
-    if (isLoggedIn == "Stu") 
-        return <Navigate to='/Stu'/>
-     else if (isLoggedIn == 'Fac') 
-        return <Navigate to='/Upload'/>
-     else 
-        return <Outlet/>
-
-    
-
-}
-
 
 export function Login() {
-    const navigate = useNavigate();
+    const nav = useNavigate();
+    
 
-    const [details, setDetails] = useState({"email": "", "password": "", "desc": ""})
+    const [details, setDetails] = useState({"email": "", "password": ""})
+    const [loggedin , isLoggedin] = useState(false);
 
 
     const handleChange = (event) => {
@@ -39,40 +26,32 @@ export function Login() {
     }
 
     const handleInputst = (e) => {
-        setDetails((prev) => {
-            return {
-                ...prev,
-                "desc": "Student"
-            }
-        });
         e.preventDefault();
+        if (details.desc === undefined || details.desc === null) {
+            details.desc = "Student";
+          }
         console.log(details);
-        axios.post(API_URL, details).then((Response) => {
+        axios.post(API_URL, details).then((Response) => {   
             if (Response) {
-                alert(Response.data.message);
-                isLoggedIn = "Stu";
-                window.location = "/stu"
+                localStorage.setItem("User",Response.data.message);
+                nav('/main');     
             } else {
                 alert("failed")
             }
         }).catch((e) => {
             alert("Falied to signin...Retry!")
         })
-
     }
     const handleInputt = (e) => {
-        setDetails((prev) => {
-            return {
-                ...prev,
-                "desc": "Faculty"
-            }
-        })
         e.preventDefault();
-        isLoggedIn = "Fac";
+        if (details.desc === undefined || details.desc === null  ) {
+            details.desc = "Faculty";
+          }
         console.log(details);
         axios.post(API_URL, details).then((Response) => {
             if (Response) {      
-                window.location = "/upload";
+                localStorage.setItem("User",Response.data.message);
+                nav('/upload')
             } else {
                 alert("failed")
             }
@@ -116,21 +95,15 @@ export function Login() {
 
                                             <div className="text-center pt-1 mb-5 pb-1">
                                                 <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button"
-                                                    onClick={handleInputt}>Log
-                                                                                                                                                                                                  in as Faculty</button>
+                                                    onClick={handleInputt}>Login as Faculty</button>
                                                 <button id="b2" className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button"
-                                                    onClick={handleInputst}>Log
-                                                                                                                                                                                                  in as Student</button>
+                                                    onClick={handleInputst}>Login as Student</button>
                                                 {/* {()=>{navigate("/Stu")}} */} </div>
 
                                             <div className="d-flex align-items-center justify-content-center pb-4">
                                                 <p className="mb-0 me-2">Don't have an account?</p>
                                                 <button type="button" className="btn btn-outline-danger"
-                                                    onClick={
-                                                        () => {
-                                                            navigate('/Signup')
-                                                        }
-                                                }>Create new</button>
+                                                    onClick={()=>{window.location="/signup"}}>Create new</button>
                                             </div>
 
                                         </form>

@@ -39,6 +39,11 @@ export function Upload() {
         'C',
         'EG'
     ];
+    const Logout = () =>{
+        localStorage.removeItem("User");
+        window.location.reload();
+      }
+    
 
     const [selectedOptions, setSelectedOptions] = useState({
         department: '',
@@ -154,7 +159,8 @@ export function Upload() {
                 </form>
             </div>
 
-            <center><button onClick={() => { window.location = "/Stu" }} class="submit-btn">Go to Main Page</button></center>
+            <center><button onClick={() => { window.location = "/main" }} class="submit-btn">Go to Main Page</button></center>
+            <h3><button onClick={Logout}>Logout</button></h3>
             {/* 
         <div class="file-upload">
             <div id="downloadZip">

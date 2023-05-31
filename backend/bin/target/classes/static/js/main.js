@@ -4,12 +4,12 @@ let uploadForm = document.querySelector("#fileUploadForm");
 let uploadFormInput = document.querySelector("#fileUploadInput");
 let downloadFile = document.querySelector("#downloadFileUrl");
 
-function uploadFile(file,deptsemsub) {
+function uploadFile(file,deptsemsub,desc) {
     let formData = new FormData();
     formData.append("file", file);
-
     formData.append("deptsemsub",deptsemsub);
-console.log(formData);
+    formData.append("description",desc);
+    console.log(formData);
 
     let req = new XMLHttpRequest();
     req.open("POST", "http://localhost:8080/file/upload")
@@ -33,11 +33,13 @@ console.log(formData);
 }
 
 uploadForm.addEventListener('submit', function (event) {
+    event.preventDefault();
     const files = uploadFormInput.files;
     const deptsemsub  =  document.getElementById("dept").value+document.getElementById("sem").value+document.getElementById("sub").value;
-console.log(files[0],deptsemsub);
+    const desc =document.getElementById("desc").value;
+     console.log(files[0],deptsemsub);
     if (files.length !== 0 ) {
-        uploadFile(files[0],deptsemsub);
+        uploadFile(files[0],deptsemsub,desc);
         event.preventDefault();
     } else {
         alert('Please select a file')

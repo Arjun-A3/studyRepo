@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './main.css';
 
+
 const YourComponent = () => {
+  const [semIndex , setSemIndex] = useState();
+  const [deptIndex , setDeptIndex] = useState();
   const options1 = [
     'SELECT DEPARTMENT',
     'COMPUTER SCIENCE AND BUSINESS SYSTEM',
@@ -36,21 +39,40 @@ const YourComponent = () => {
     'MDC',
     'PHYSICS',
     'C',
-    'EG'
-  ];
+    'EG',];
 
   const [selectedOptions, setSelectedOptions] = useState({
     department: '',
     semester: '',
     subject: ''
   });
+  const Logout = () =>{
+    localStorage.removeItem("User");
+    window.location.reload();
+  }
 
-  const handleOptionChange = (event, type) => {
+  const handleDeptChange = (event, type) => {
+    alert(event.target.key)
     setSelectedOptions({
       ...selectedOptions,
       [type]: event.target.value
     });
   };
+  const handleSemChange = (event, type) => { 
+    setSelectedOptions({
+      ...selectedOptions,
+      [type]: event.target.value
+    });
+  };
+  const handleSubChange = (event, type) => {
+    setSelectedOptions({
+      ...selectedOptions,
+      [type]: event.target.value
+    });
+  };
+  
+  
+  
 
   const handleDownload = () => {
     const url = "http://localhost:8080/file/downloadbyDSS/" + selectedOptions.department + selectedOptions.semester + selectedOptions.subject;
@@ -65,7 +87,7 @@ const YourComponent = () => {
           <select
             className="dropdown"
             value={selectedOptions.department}
-            onChange={(event) => handleOptionChange(event, 'department')}
+            onChange={(event) => handleDeptChange(event, 'department')}
           >
             {options1.map((option, index) => (
               <option key={index} value={option}>
@@ -79,7 +101,7 @@ const YourComponent = () => {
           <select
             className="dropdown"
             value={selectedOptions.semester}
-            onChange={(event) => handleOptionChange(event, 'semester')}
+            onChange={(event) => handleSemChange(event, 'semester')}
           >
             {options2.map((option, index) => (
               <option key={index} value={option}>
@@ -93,7 +115,7 @@ const YourComponent = () => {
           <select
             className="dropdown"
             value={selectedOptions.subject}
-            onChange={(event) => handleOptionChange(event, 'subject')}
+            onChange={(event) => handleSubChange(event, 'subject')}
           >
             {options3.map((option, index) => (
               <option key={index} value={option}>
@@ -116,6 +138,7 @@ const YourComponent = () => {
           </div>
           
         )}
+        <h3><button onClick={Logout}>Logout</button></h3>
        
       </div>
     </div>
