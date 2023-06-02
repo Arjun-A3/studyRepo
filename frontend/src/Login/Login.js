@@ -4,7 +4,6 @@ import log from './log.png';
 import {useState} from 'react';
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
-import RequireAuthst from '../Routeconfig/RequireAuthst';
 const API_URL = "http://localhost:8080/auth/login"
 
 export function Login() {
@@ -12,9 +11,14 @@ export function Login() {
     
 
     const [details, setDetails] = useState({"email": "", "password": ""})
-    const [loggedin , isLoggedin] = useState(false);
 
-
+    const addDataIntoCache = (cacheName , url , response) =>{
+        const data = new Response(JSON.stringify(response));
+        if('caches' in window){
+        caches.open(cacheName)
+        .then((cache)=>{cache.put(url,data);alert("userInfro added to cache!")});
+    }
+    }
     const handleChange = (event) => {
         const {name, value} = event.target;
         setDetails((prev) => {
@@ -33,7 +37,7 @@ export function Login() {
         console.log(details);
         axios.post(API_URL, details).then((Response) => {   
             if (Response) {
-                localStorage.setItem("User",Response.data.message);
+                addDataIntoCache('userInfo','http://localhost:3000',Response.data.message);
                 nav('/main');     
             } else {
                 alert("failed")
@@ -50,7 +54,7 @@ export function Login() {
         console.log(details);
         axios.post(API_URL, details).then((Response) => {
             if (Response) {      
-                localStorage.setItem("User",Response.data.message);
+                addDataIntoCache('userInfo','http://localhost:3000',Response.data.message);
                 nav('/upload')
             } else {
                 alert("failed")

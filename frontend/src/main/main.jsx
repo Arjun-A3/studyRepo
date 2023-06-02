@@ -53,7 +53,7 @@ const YourComponent = () => {
     subject: ''
   });
   const Logout = () => {
-    localStorage.removeItem("User");
+    caches.keys().then((names)=>{names.forEach((name)=>{caches.delete(name);})})
     window.location.reload();
   }
 
@@ -159,21 +159,7 @@ const YourComponent = () => {
           </select>
 
         </div>
-        {/* <div className="dropdown-section">
-          <h2>SUBJECT</h2>
-          <select
-            className="dropdown"
-            value={selectedOptions.subject}
-            onChange={(event) => handleSubChange(event, 'subject')}
-          >
-            {options3[1].map((option, index) => (
-              <option key={index} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-
-        </div> */}
+        
         {selectedOptions.department && selectedOptions.semester && (
           <div>
             <div className="dropdown-section">

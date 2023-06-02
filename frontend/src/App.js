@@ -9,11 +9,27 @@ import YourComponent from './main/main';
 import Page404 from './404/404';
 import RequireAuthf from './Routeconfig/RequireAuthf';
 import RequireAuthst from './Routeconfig/RequireAuthst';
-export const user = "";
+import { useEffect, useState } from 'react';
 
 
 function App() {
-  localStorage.setItem("User","");
+  // localStorage.setItem("User","");
+  const [user,setuser] = useState("");
+    useEffect(()=>{
+    getCacheData('userInfo','http://localhost:3000');
+  })
+  const getCacheData = async(cacheName , url) =>{
+    if( typeof caches === 'undefined') return false;
+    const cacheStorage = await caches.open(cacheName);
+    const cachedResponse = await cacheStorage.match(url);
+    if(!cachedResponse ||!cachedResponse.ok)
+    {
+      setuser("Not allowed")
+    }
+    else{
+      cachedResponse.json().then((item)=>{setuser(item)})
+    }
+  }
   return (
     <div className="App">
       <Routes>
@@ -21,11 +37,11 @@ function App() {
         <Route path='/Log' element={<Login/>}/>
         <Route path='/Signup' element={<Signup/>}/>
         
-        <Route element={<RequireAuthf />}>
+        <Route element={<RequireAuthf user={user}/>}>
         <Route path='/upload' element={<Upload/>}/>
         </Route>
-        <Route element={<RequireAuthst />}>
-        <Route path='/main' element={<YourComponent/>}exact/>
+        <Route element={<RequireAuthst user={user} />}>
+        <Route path='/main' element={<YourComponent/>}/>
         </Route>
 
 
