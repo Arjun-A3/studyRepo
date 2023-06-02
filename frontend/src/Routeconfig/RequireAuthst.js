@@ -4,7 +4,7 @@ import { Navigate,Outlet } from 'react-router-dom';
 function RequireAuthst() {
   const user = localStorage.getItem("User");
   return (
-    user === "Student" || user === "Faculty" ? <Outlet/>:<Navigate to="/Log"/>
+    user === "Student" || user === "Faculty"  ? <Outlet/>:<Navigate to="/Log"/>
   )
 }
 

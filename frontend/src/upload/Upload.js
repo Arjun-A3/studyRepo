@@ -6,20 +6,12 @@ export function Upload() {
     const options1 = [
         'SELECT DEPARTMENT',
         'COMPUTER SCIENCE AND BUSINESS SYSTEM',
-        'COMPUTER SCIENCE ENGINEERING',
         'ARTIFICIAL INTELLIGENCE AND DATA SCIENCE',
-        'ELECTRICAL ELECTRONIC AND COMMUNICATION ENGINEERING',
-        'AERONATICAL ENGINEERING',
-        'BIOMEDICAL ENGINEERING ',
-        'MECHANICAL ENGINEERING',
-        'ELECRTRICAL AND ELECTRONIC ENGINEERING',
-        'AGRICULTURAL ENGINEERING',
-        'BIOTECHNOLOGY',
-        'MASTER OF BUSINESS ADMINISTRATION',
+        'COMPUTER SCIENCE ENGINEERING',
         'MASTER OF COMPUTER APPLICATION'
-    ];
-
-    const options2 = [
+      ];
+    
+      const options2 = [
         'SELECT SEMESTER',
         'SEMESTER -1',
         'SEMESTER -2',
@@ -29,16 +21,18 @@ export function Upload() {
         'SEMESTER -6',
         'SEMESTER -7',
         'SEMESTER -8'
-    ];
-
-    const options3 = [
-        'SELECT SUBJECT',
-        'BCVS-I',
-        'MDC',
-        'PHYSICS',
-        'C',
-        'EG'
-    ];
+      ];
+      let options3 = [
+        ["..","..","..","..",".."],
+        ['SELECT SUBJECT', 'BCVS-I', 'MDC', 'PHYSICS', 'C', 'EG'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ['csbsdemo1', 'csbsdemo2', 'csbsdemo3', 'csbsdemo4', 'csbsdemo5'],
+        ];
     const Logout = () =>{
         localStorage.removeItem("User");
         window.location.reload();
@@ -99,10 +93,6 @@ export function Upload() {
         }
     }
 
-
-
-
-
     return (
         <div class="file-container">
             <div class="file-upload-header">
@@ -112,7 +102,7 @@ export function Upload() {
                 <form onSubmit={uploadFrom}>
                     <h3>File Upload</h3>
                     <div className="dropdown-section">
-                        <h2>DEPARTMENT</h2>
+                        <h5 style={{color:"black"}}>DEPARTMENT</h5>
                         <select
                             className="dropdown"
                             value={selectedOptions.department}
@@ -126,7 +116,7 @@ export function Upload() {
                         </select>
                     </div>
                     <div className="dropdown-section">
-                        <h2>SEMESTER</h2>
+                    <h5 style={{color:"black"}}>SEMESTER</h5>
                         <select
                             className="dropdown"
                             value={selectedOptions.semester}
@@ -140,13 +130,13 @@ export function Upload() {
                         </select>
                     </div>
                     <div className="dropdown-section">
-                        <h2>SUBJECT</h2>
+                    <h5 style={{color:"black"}}>SUBJECT</h5>
                         <select
                             className="dropdown"
                             value={selectedOptions.subject}
                             onChange={(event) => handleOptionChange(event, 'subject')}
                         >
-                            {options3.map((option, index) => (
+                            {options3[0].map((option, index) => (
                                 <option key={index} value={option}>
                                     {option}
                                 </option>
@@ -160,7 +150,7 @@ export function Upload() {
             </div>
 
             <center><button onClick={() => { window.location = "/main" }} class="submit-btn">Go to Main Page</button></center>
-            <h3><button onClick={Logout}>Logout</button></h3>
+            <h3><button className="btn btn-outline-danger" onClick={Logout}>Logout</button></h3>
             {/* 
         <div class="file-upload">
             <div id="downloadZip">
