@@ -73,7 +73,7 @@ const YourComponent = () => {
   });
   const Logout = () => {
     // caches.keys().then((names)=>{names.forEach((name)=>{caches.delete(name);})})
-    localStorage.removeItem('User')
+    localStorage.clear();
     window.location.reload();
   }
 
@@ -98,6 +98,9 @@ const YourComponent = () => {
     else if (deptindex === 4){
       setIndex(options2.indexOf(event.target.value) + (deptindex*8));
     }
+    // else if (deptindex === 5){
+    //   setIndex(options2.indexOf(event.target.value) + (deptindex*4+4));
+    // }
     setSelectedOptions({
       ...selectedOptions,
       [type]: event.target.value
@@ -145,6 +148,18 @@ const YourComponent = () => {
         alert("File Not Found");
       });
   }
+  // function handleDSDownload(){
+  //   const url = "http://localhost:8080/file/downloadZipFileByDs/" + selectedOptions.department + selectedOptions.semester ;
+  //   axios.get(url)
+  //     .then((Response) => {
+  //       console.log(Response.headers);
+  //       window.location = url;
+  //     })
+  //     .catch((e) => {
+  //       alert("File Not Found");
+  //     });
+
+  // }
 
   return (
     <div className="container">
@@ -183,6 +198,15 @@ const YourComponent = () => {
         
         {selectedOptions.department && selectedOptions.semester && (
           <div>
+            {/* <div className="message-section">
+            <p id='PC'>
+             Do you wanter to download files of  <strong>{selectedOptions.department}</strong> -{' '}
+              <strong>{selectedOptions.semester}</strong> as a Zip file.
+            </p><br></br>
+            <button className="button" onClick={handleDSDownload}>
+              Download
+            </button>
+            </div> */}
             <div className="dropdown-section">
               <h2>SUBJECT</h2>
               <select
@@ -196,7 +220,6 @@ const YourComponent = () => {
                   </option>
                 ))}
               </select>
-
             </div>
           </div>
         )}

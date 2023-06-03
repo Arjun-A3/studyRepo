@@ -27,6 +27,9 @@ export const user = "";
 
 
 function App() {
+  useEffect(() => {
+    document.body.style.zoom = "90%";
+  }, []);
   
   //  useEffect(() => {
   //   const data = window.localStorage.getItem('User');
