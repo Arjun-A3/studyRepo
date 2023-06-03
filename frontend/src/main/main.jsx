@@ -27,23 +27,42 @@ const YourComponent = () => {
   ];
   let options3 = [
     ["SELECT SUBJECT", "..", "..", "..", ".."],
+    //CSBS
     ['SELECT SUBJECT', 'BCVS-I', 'MDC', 'PHYSICS', 'C', 'EG'],
-    ['csbss2demo1', 'csbss2demo2', 'csbss2demo3', 'csbs2sdemo4', 'csbss2demo5'],
-    ['csbss3demo1', 'csbss3demo2', 'csbss3demo3', 'csbss3demo4', 'csbss3demo5'],
-    ['csbs4sdemo1', 'csbss4demo2', 'csbss4demo3', 'csbss4demo4', 'csbss4demo5'],
-    ['csbs5sdemo1', 'csbss5demo2', 'csbss5demo3', 'csbss5demo4', 'csbss5demo5'],
-    ['csbs6sdemo1', 'csbss6demo2', 'csbss6demo3', 'csbss6demo4', 'csbss6demo5'],
-    ['csbs7sdemo1', 'csbss7demo2', 'csbss7demo3', 'csbss7demo4', 'csbss7demo5'],
-    ['csbs8sdemo1', 'csbss8demo2', 'csbss8demo3', 'csbss8demo4', 'csbss8demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['aidsS2demo1', 'aidsS2demo2', 'aidss2demo3', 'aidss2demo4', 'aidss2demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['aidsS1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
-    ['CSES1demo1', 'aidsS1demo2', 'aidss1demo3', 'aidss1demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','csbss2demo1', 'csbss2demo2', 'csbss2demo3', 'csbs2sdemo4', 'csbss2demo5'],
+    ['SELECT SUBJECT','csbss3demo1', 'csbss3demo2', 'csbss3demo3', 'csbss3demo4', 'csbss3demo5'],
+    ['SELECT SUBJECT','csbs4sdemo1', 'csbss4demo2', 'csbss4demo3', 'csbss4demo4', 'csbss4demo5'],
+    ['SELECT SUBJECT','csbs5sdemo1', 'csbss5demo2', 'csbss5demo3', 'csbss5demo4', 'csbss5demo5'],
+    ['SELECT SUBJECT','csbs6sdemo1', 'csbss6demo2', 'csbss6demo3', 'csbss6demo4', 'csbss6demo5'],
+    ['SELECT SUBJECT','csbs7sdemo1', 'csbss7demo2', 'csbss7demo3', 'csbss7demo4', 'csbss7demo5'],
+    ['SELECT SUBJECT','csbs8sdemo1', 'csbss8demo2', 'csbss8demo3', 'csbss8demo4', 'csbss8demo5'],
+    //AIDS
+    ['SELECT SUBJECT','aidsS1demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','aidsS2demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss2demo5'],
+    ['SELECT SUBJECT','aidsS3demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','aidsS4demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','aidsS5demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','aidsS6demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','aidsS7demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    ['SELECT SUBJECT','aidsS8demo1', 'aidsS2demo2', 'aidss3demo3', 'aidss4demo4', 'aidss1demo5'],
+    //CSE
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    ['SELECT SUBJECT','CSES1demo1',  'CSES1demo2', 'CSES1demo3', 'CSES1demo4', 'CSES1demo5'],
+    //MCA
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
+    ['MCAS1demo1',  'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1', 'MCAS1demo1'],
   ];
 
 
@@ -53,13 +72,15 @@ const YourComponent = () => {
     subject: ''
   });
   const Logout = () => {
-    localStorage.removeItem("User");
+    // caches.keys().then((names)=>{names.forEach((name)=>{caches.delete(name);})})
+    localStorage.removeItem('User')
     window.location.reload();
   }
 
   const handleDeptChange = (event, type) => {
     setdeptindex(options1.indexOf(event.target.value));
     setSelectedOptions({
+
       ...selectedOptions,
       [type]: event.target.value
     });
@@ -159,21 +180,7 @@ const YourComponent = () => {
           </select>
 
         </div>
-        {/* <div className="dropdown-section">
-          <h2>SUBJECT</h2>
-          <select
-            className="dropdown"
-            value={selectedOptions.subject}
-            onChange={(event) => handleSubChange(event, 'subject')}
-          >
-            {options3[1].map((option, index) => (
-              <option key={index} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-
-        </div> */}
+        
         {selectedOptions.department && selectedOptions.semester && (
           <div>
             <div className="dropdown-section">

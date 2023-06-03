@@ -1,22 +1,25 @@
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import log from './log.png';
-import {useState} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
-import RequireAuthst from '../Routeconfig/RequireAuthst';
 const API_URL = "http://localhost:8080/auth/login"
+
 
 export function Login() {
     const nav = useNavigate();
-    
+    const [details, setDetails] = useState({ "email": "", "password": "" })
 
-    const [details, setDetails] = useState({"email": "", "password": ""})
-    const [loggedin , isLoggedin] = useState(false);
-
-
+    // const addDataIntoCache = (cacheName , url , response) =>{
+    //     const data = new Response(JSON.stringify(response));
+    //     if('caches' in window){
+    //     caches.open(cacheName)
+    //     .then((cache)=>{cache.put(url,data);});
+    // }
+    // }
     const handleChange = (event) => {
-        const {name, value} = event.target;
+        const { name, value } = event.target;
         setDetails((prev) => {
             return {
                 ...prev,
@@ -29,12 +32,12 @@ export function Login() {
         e.preventDefault();
         if (details.desc === undefined || details.desc === null) {
             details.desc = "Student";
-          }
-        console.log(details);
-        axios.post(API_URL, details).then((Response) => {   
+        }
+        axios.post(API_URL, details).then((Response) => {
             if (Response) {
-                localStorage.setItem("User",Response.data.message);
-                nav('/main');     
+                
+                window.localStorage.setItem("User",Response.data.message)
+                nav('/main');
             } else {
                 alert("failed")
             }
@@ -44,13 +47,14 @@ export function Login() {
     }
     const handleInputt = (e) => {
         e.preventDefault();
-        if (details.desc === undefined || details.desc === null  ) {
+        if (details.desc === undefined || details.desc === null) {
             details.desc = "Faculty";
-          }
-        console.log(details);
+        }
+        
         axios.post(API_URL, details).then((Response) => {
-            if (Response) {      
-                localStorage.setItem("User",Response.data.message);
+            if (Response) {
+                // addDataIntoCache('userInfo','http://localhost:3000',Response.data.message);
+                window.localStorage.setItem("User",Response.data.message)
                 nav('/upload')
             } else {
                 alert("failed")
@@ -74,7 +78,7 @@ export function Login() {
                                             <center>
                                                 <img src={log}
                                                     id="image"
-                                                    alt="logo"/></center>
+                                                    alt="logo" /></center>
 
                                         </div>
 
@@ -83,13 +87,13 @@ export function Login() {
 
                                             <div className="form-outline mb-4">
                                                 <input type="email" id="email" name="email" className="form-control" placeholder="email address"
-                                                    onChange={handleChange}/>
+                                                    onChange={handleChange} />
 
                                             </div>
 
                                             <div className="form-outline mb-4">
                                                 <input type="password" id="password" name="password" className="form-control" placeholder='password'
-                                                    onChange={handleChange}/>
+                                                    onChange={handleChange} />
 
                                             </div>
 
@@ -103,7 +107,7 @@ export function Login() {
                                             <div className="d-flex align-items-center justify-content-center pb-4">
                                                 <p className="mb-0 me-2">Don't have an account?</p>
                                                 <button type="button" className="btn btn-outline-danger"
-                                                    onClick={()=>{window.location="/signup"}}>Create new</button>
+                                                    onClick={() => { window.location = "/signup" }}>Create new</button>
                                             </div>
 
                                         </form>

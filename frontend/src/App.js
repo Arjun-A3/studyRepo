@@ -9,11 +9,57 @@ import YourComponent from './main/main';
 import Page404 from './404/404';
 import RequireAuthf from './Routeconfig/RequireAuthf';
 import RequireAuthst from './Routeconfig/RequireAuthst';
+import { useEffect, useState } from 'react';
 export const user = "";
 
 
+// const getCacheData = async (cacheName, url) => {
+//   if (typeof caches === 'undefined') return null;
+//   const cacheStorage = await caches.open(cacheName);
+//   const cachedResponse = await cacheStorage.match(url);
+//   if (!cachedResponse || !cachedResponse.ok) {
+//     return null;
+//   } else {
+//     const data = await cachedResponse.json();
+//     return data;
+//   }
+// };
+
+
 function App() {
-  localStorage.setItem("User","");
+  
+  //  useEffect(() => {
+  //   const data = window.localStorage.getItem('User');
+  //   if ( data !== null ) setuser(data);
+  // });
+  
+  // const [user,setuser] = useState("");
+  //   useEffect(()=>{
+  //   getCacheData('userInfo','http://localhost:3000');
+  // })
+  // const getCacheData = async(cacheName , url) =>{
+  //   if( typeof caches === 'undefined') return false;
+  //   const cacheStorage = await caches.open(cacheName);
+  //   const cachedResponse = await cacheStorage.match(url);
+  //   if(!cachedResponse ||!cachedResponse.ok)
+  //   {
+  //     setuser("Not allowed")
+  //   }
+  //   else{
+  //     cachedResponse.json().then((item)=>{setuser(item)}) // in this line the item is updating to the chache value but user is not getting updated
+  //   }
+  //   alert(user);
+  // }
+  // useEffect(() => {
+  //   (async () => {
+  //     const data = await getCacheData('userInfo', 'http://localhost:3000');
+  //     if (data !== null) {
+  //       setuser(data);
+  //     } else {
+  //       setuser('Not allowed');
+  //     }
+  //   })();
+  // },);
   return (
     <div className="App">
       <Routes>
@@ -25,7 +71,7 @@ function App() {
         <Route path='/upload' element={<Upload/>}/>
         </Route>
         <Route element={<RequireAuthst />}>
-        <Route path='/main' element={<YourComponent/>}exact/>
+        <Route path='/main' element={<YourComponent/>}/>
         </Route>
 
 

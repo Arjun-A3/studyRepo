@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigate,Outlet } from 'react-router-dom';
 
 function RequireAuthst() {
-  const user = localStorage.getItem("User");
+  // const [currentUser , setCurrentUser] = useState("");
+  // useEffect(()=>{
+  //   const user = localStorage.getItem('User')
+  //   setCurrentUser(user);
+  // })
+  // alert(currentUser)
+  const user = window.localStorage.getItem("User")
+  
   return (
-    user === "Student" || user === "Faculty"  ? <Outlet/>:<Navigate to="/Log"/>
+    user === "Student" || user === "Faculty" ? <Outlet/>:<Navigate to="/Log"/>
   )
 }
 
