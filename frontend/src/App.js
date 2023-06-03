@@ -67,7 +67,7 @@ function App() {
         <Route path='/Log' element={<Login/>}/>
         <Route path='/Signup' element={<Signup/>}/>
         
-        <Route element={<RequireAuthf />}>
+        <Route element={<RequireAuthf/>}>
         <Route path='/upload' element={<Upload/>}/>
         </Route>
         <Route element={<RequireAuthst />}>
