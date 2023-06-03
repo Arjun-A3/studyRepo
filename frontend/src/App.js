@@ -27,6 +27,11 @@ export const user = "";
 
 
 function App() {
+  const Logout = () => {
+    // caches.keys().then((names)=>{names.forEach((name)=>{caches.delete(name);})})
+    localStorage.clear();
+    window.location.reload();
+  }
   useEffect(() => {
     document.body.style.zoom = "90%";
   }, []);
@@ -65,6 +70,9 @@ function App() {
   // },);
   return (
     <div className="App">
+      {( localStorage.getItem('User') === "Student" || localStorage.getItem('User') === "Faculty") && (
+        <h3><button className="btn btn-outline-danger" onClick={Logout}>Logout</button></h3>
+      )}
       <Routes>
         <Route path='/' element={<Login />}/>
         <Route path='/Log' element={<Login/>}/>

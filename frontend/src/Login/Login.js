@@ -38,6 +38,7 @@ export function Login() {
                 
                 window.localStorage.setItem("User",Response.data.message)
                 nav('/main');
+                window.location.reload();
             } else {
                 alert("failed")
             }
@@ -56,6 +57,7 @@ export function Login() {
                 // addDataIntoCache('userInfo','http://localhost:3000',Response.data.message);
                 window.localStorage.setItem("User",Response.data.message)
                 nav('/upload')
+                window.location.reload();
             } else {
                 alert("failed")
             }

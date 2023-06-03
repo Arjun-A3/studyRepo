@@ -70,12 +70,6 @@ export function Upload() {
         semester: '',
         subject: ''
     });
-    const Logout = () => {
-        // caches.keys().then((names)=>{names.forEach((name)=>{caches.delete(name);})})
-        localStorage.clear();
-        window.location.reload();
-    }
-
     const handleDeptChange = (event, type) => {
         setdeptindex(options1.indexOf(event.target.value));
         setSelectedOptions({
@@ -218,7 +212,7 @@ export function Upload() {
             </div>
 
             <center><button onClick={() => { window.location = "/main" }} class="submit-btn">Go to Main Page</button></center>
-            <h3><button className="btn btn-outline-danger" onClick={Logout}>Logout</button></h3>
+            
             {/* 
         <div class="file-upload">
             <div id="downloadZip">
