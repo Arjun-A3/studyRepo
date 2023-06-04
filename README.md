@@ -8,8 +8,8 @@ Introducing Study Repo, our innovative web application that revolutionizes how r
 
 ## Features
 
-- Upload and download any Tupe of data
-- Drag and drop Files in the upload portal
+- Upload and download any Type of data
+- Upload files in the upload portal
 - seperate login for student and faculties
 - Upload page exclusive for faculties
-- various Study materials available
+- Categorised accordingly to the department and subject
