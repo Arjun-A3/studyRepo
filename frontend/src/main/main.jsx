@@ -91,7 +91,7 @@ const YourComponent = () => {
       setIndex(options2.indexOf(event.target.value) + (deptindex*5+1));
     }
     else if (deptindex === 4){
-      setIndex(options2.indexOf(event.target.value) + (deptindex*8));
+      setIndex(options2.indexOf(event.target.value) + (deptindex*6+1));
     }
     // else if (deptindex === 5){
     //   setIndex(options2.indexOf(event.target.value) + (deptindex*4+4));

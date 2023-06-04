@@ -10,7 +10,9 @@ import Page404 from './404/404';
 import RequireAuthf from './Routeconfig/RequireAuthf';
 import RequireAuthst from './Routeconfig/RequireAuthst';
 import { useEffect, useState } from 'react';
-export const user = "";
+import { AboutUs } from './aboutus/aboutUs';
+import ContactUs from './contactus/ContactUs';
+
 
 
 // const getCacheData = async (cacheName, url) => {
@@ -33,7 +35,7 @@ function App() {
     window.location.reload();
   }
   useEffect(() => {
-    document.body.style.zoom = "90%";
+    document.body.style.zoom = "80%";
   }, []);
   
   //  useEffect(() => {
@@ -77,6 +79,8 @@ function App() {
         <Route path='/' element={<Login />}/>
         <Route path='/Log' element={<Login/>}/>
         <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/about' element={<AboutUs/>}/>
+        <Route path='/contact' element={<ContactUs/>}/>
         
         <Route element={<RequireAuthf/>}>
         <Route path='/upload' element={<Upload/>}/>

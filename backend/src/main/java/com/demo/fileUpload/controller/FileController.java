@@ -1,9 +1,14 @@
 package com.demo.fileUpload.controller;
 
 import com.demo.fileUpload.model.LoadFile;
+import com.demo.fileUpload.payload.Response.messageResponse;
 import com.demo.fileUpload.service.FileService;
+import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,10 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Calendar;
 
+
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("file")
 public class FileController {
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
 
     @Autowired
@@ -23,7 +33,15 @@ public class FileController {
 
     @PostMapping("/upload")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file, @RequestParam("deptsemsub") String dss,@RequestParam("description") String desc) throws IOException {
-        return new ResponseEntity<>(fileService.addFile(file, dss,desc), HttpStatus.OK);
+        Query query = new Query();
+        query.addCriteria(Criteria.where("metadata.deptsemsub").is(dss));
+        boolean deptSemSubExists = mongoTemplate.exists(query, "fs.files");
+
+        if (deptSemSubExists) {
+            return ResponseEntity.ok(new messageResponse("File already exists"));
+        }
+        fileService.addFile(file, dss,desc);
+        return  ResponseEntity.ok(new messageResponse(("File Uploaded successfully")));
     }
 
     @RequestMapping(value = "/downloadbyDSS/{deptsemsub}", method = RequestMethod.GET)

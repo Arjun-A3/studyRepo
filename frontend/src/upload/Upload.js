@@ -89,7 +89,7 @@ export function Upload() {
             setIndex(options2.indexOf(event.target.value) + (deptindex * 5 + 1));
         }
         else if (deptindex === 4) {
-            setIndex(options2.indexOf(event.target.value) + (deptindex * 8));
+            setIndex(options2.indexOf(event.target.value) + (deptindex * 6+1));
         }
         // else if (deptindex === 5){
         //   setIndex(options2.indexOf(event.target.value) + (deptindex*4+4));
@@ -109,21 +109,25 @@ export function Upload() {
 
     let uploadFormInput = document.querySelector("#fileUploadInput");
 
-    function uploadFile(file, deptsem, deptsemsub, desc) {
+    function uploadFile(file, deptsemsub, desc) {
         let formData = new FormData();
         formData.append("file", file);
-        formData.append("deptsem", deptsem);
         formData.append("deptsemsub", deptsemsub);
         formData.append("description", desc);
-        alert("part 2")
         let req = new XMLHttpRequest();
         req.open("POST", "http://localhost:8080/file/upload")
         req.onload = function () {
             console.log(req.responseText);
-            let response = req.responseText;
-            if (response !== null) {
-                alert("files uploaded")
-            } else {
+            let response = JSON.parse(req.responseText);
+            if (response.message === "File already exists") {
+
+                alert("File already exists, developers are working on it!!")
+            }
+            else if(response.message ==="File Uploaded successfully")
+            {
+                alert("File Uploaded successfully");
+            }
+            else {
                 alert("Error Occured");
             }
         }
@@ -133,15 +137,11 @@ export function Upload() {
 
     const uploadFrom = (event) => {
         event.preventDefault();
-        alert("part1")
         const files = uploadFormInput.files;
         const deptsemsub = selectedOptions.department + selectedOptions.semester + selectedOptions.subject;
-        const deptsem = selectedOptions.department + selectedOptions.semester;
         const desc = document.getElementById("desc").value;
-        console.log(files[0],deptsem, deptsemsub);
         if (files.length !== 0) {
-            alert("if")
-            uploadFile(files[0], deptsem, deptsemsub, desc);
+            uploadFile(files[0], deptsemsub, desc);
             event.preventDefault();
         } else {
             alert('Please select a file')
