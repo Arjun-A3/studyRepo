@@ -16,4 +16,4 @@ Introducing Study Repo, our innovative web application that revolutionizes how r
 - 
 ## Screenshots
 
-![App Screenshot](screenshots/WhatsApp Image 2023-06-04 at 3.23.23 PM.jpeg)
+![App Screenshot](https://github.com/Arjun-A3/studyRepo/blob/fc29d6b36d8358a6d291db792c9ce0db1466486e/screenshots/WhatsApp%20Image%202023-06-04%20at%203.23.23%20PM.jpeg)
