@@ -8,8 +8,22 @@ Introducing Study Repo, our innovative web application that revolutionizes how r
 
 ## Features
 
-- Upload and download any Tupe of data
-- Drag and drop Files in the upload portal
+- Upload and download any Type of data
+- Upload files in the upload portal
 - seperate login for student and faculties
 - Upload page exclusive for faculties
-- various Study materials available
+- Categorised accordingly to the department and subject
+- 
+## Screenshots
+
+- Login page
+![App Screenshot](https://github.com/Arjun-A3/studyRepo/blob/fc29d6b36d8358a6d291db792c9ce0db1466486e/screenshots/WhatsApp%20Image%202023-06-04%20at%203.23.23%20PM.jpeg)
+
+- Singup
+![App Screenshot](https://github.com/Arjun-A3/studyRepo/blob/385b20cb69cfc053164581bdcbb424c259a423e8/screenshots/WhatsApp%20Image%202023-06-04%20at%203.27.29%20PM.jpeg)
+
+- Upload
+![App Screenshot](https://github.com/Arjun-A3/studyRepo/blob/385b20cb69cfc053164581bdcbb424c259a423e8/screenshots/WhatsApp%20Image%202023-06-04%20at%203.25.23%20PM.jpeg)
+
+- Download
+![App Screenshot](https://github.com/Arjun-A3/studyRepo/blob/385b20cb69cfc053164581bdcbb424c259a423e8/screenshots/WhatsApp%20Image%202023-06-04%20at%203.24.29%20PM.jpeg)

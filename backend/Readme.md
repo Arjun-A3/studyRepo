@@ -1,11 +1,10 @@
-## File Upload / Download Example using Spring Boot and MongoDB
+## File Upload / Download
 
-Tutorial : [File Upload & Download with SpringBoot and MongoDB](https://hansanitharaka.medium.com/file-upload-with-springboot-and-mongodb-76a8f5b9f75d)
 
 ## Getting Started
 **1. Clone the repository**
 ```bash
-git clone https://github.com/hansitharaka/springboot-mongodb-file-upload-download.git
+ git  clone https://github.com/Arjun-A3/studyRepo.git
 ```
 **2. Specify your database**
 
@@ -26,11 +25,10 @@ spring.data.mongodb.uri=mongodb+srv://admin:<password>@cluster0.eypdh.mongodb.ne
 ## REST end-points
 * Upload a File: `http://localhost:8080/file/upload`
 * Download a File: `http://localhost:8080/file/download/{id}`
+* Download a File by Dept Sem Subject  : 'http://localhost:8080/file/downloadByDSS/{deptsemsub} 
 
 ##
-The application can be accessed at `http://localhost:8080` or open `src/main/resources/static/index.html` to access frontend
-
-![File upload frontend snapshot](/src/main/resources/images/frontend.png)
+The application can be accessed at `http://localhost:8080`
 
 
-That's all! Good Luck :muscle:
+That's all! Thank you :muscle:
