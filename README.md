@@ -13,3 +13,7 @@ Introducing Study Repo, our innovative web application that revolutionizes how r
 - seperate login for student and faculties
 - Upload page exclusive for faculties
 - Categorised accordingly to the department and subject
+- 
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
