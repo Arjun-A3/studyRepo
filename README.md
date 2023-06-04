@@ -16,4 +16,4 @@ Introducing Study Repo, our innovative web application that revolutionizes how r
 - 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](screenshots/WhatsApp Image 2023-06-04 at 3.23.23 PM.jpeg)
