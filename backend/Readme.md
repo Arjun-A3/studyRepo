@@ -30,4 +30,4 @@ spring.data.mongodb.uri=mongodb+srv://admin:<password>@cluster0.eypdh.mongodb.ne
 The application can be accessed at `http://localhost:8080`
 
 
-That's all! Good Luck :muscle:
+That's all! Thank you :muscle:
