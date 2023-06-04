@@ -4,6 +4,7 @@
 ## Getting Started
 **1. Clone the repository**
 ```bash
+ git  clone https://github.com/Arjun-A3/studyRepo.git
 ```
 **2. Specify your database**
 
