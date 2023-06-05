@@ -5,7 +5,7 @@ export function AboutUs() {
     return (
         <div id="abt"><div class="abtcontainer">
             <h1 id="abth1" contenteditable>Study Repo</h1>
-            <p id = "abtp">We four devs made this with love!</p>
+            <p id = "abtp">we are four web developers from Kalaignar Karunanidhi Institute Of Technology</p>
             
         </div></div>
     )

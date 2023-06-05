@@ -122,10 +122,12 @@ export function Upload() {
             if (response.message === "File already exists") {
 
                 alert("File already exists, developers are working on it!!")
+                window.location.reload();
             }
             else if(response.message ==="File Uploaded successfully")
             {
                 alert("File Uploaded successfully");
+                window.location.reload();
             }
             else {
                 alert("Error Occured");
