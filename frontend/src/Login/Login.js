@@ -35,7 +35,6 @@ export function Login() {
         }
         axios.post(API_URL, details).then((Response) => {
             if (Response) {
-                
                 window.localStorage.setItem("User",Response.data.message)
                 nav('/main');
                 window.location.reload();
@@ -119,7 +118,7 @@ export function Login() {
                                 <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                                     <div className="text-black px-3 py-4 p-md-5 mx-md-4">
                                         <h4 className="mb-4">What We Are?!</h4>
-                                        <p className="small mb-0">Our project aims to develop a web-based platform that facilitates the sharing of learning resources between teachers and students. The platform will consist of two login pages, one for teachers and another for students. Teachers can log in to the platform and upload files such as lecture notes, presentations, and assignments. Students, on the other hand, can log in to the platform and  download these files for their exam preparation. The files uploaded by teachers will be stored on a server and organized by course and topic for easy access by students. The robustness, efficiency, and security of this website are enhanced through the utilization of React.js, Spring Boot, and MongoDB in its development.</p>
+                                        <p className="small mb-0" style={{textAlign:"justify"}} >Our project aims to develop a web-based platform that facilitates the sharing of learning resources between teachers and students. The platform will consist of two login pages, one for teachers and another for students. Teachers can log in to the platform and upload files such as lecture notes, presentations, and assignments. Students, on the other hand, can log in to the platform and  download these files for their exam preparation. The files uploaded by teachers will be stored on a server and organized by course and topic for easy access by students. The robustness, efficiency, and security of this website are enhanced through the utilization of React.js, Spring Boot, and MongoDB in its development.</p>
                                     </div>
                                 </div>
                             </div>

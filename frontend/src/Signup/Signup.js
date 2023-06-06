@@ -1,4 +1,5 @@
 import './Signup.css';
+import validator from 'validator';
 
 import { useState } from 'react';
 import { Navigate, json } from 'react-router-dom';
@@ -7,6 +8,22 @@ import { Login } from '../Login/Login';
 
 const API_URL = "http://localhost:8080/auth/"
 export function Signup() {
+  const [isvalidP, setisvalidP] = useState(false);
+
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+  const validate = (value) => {
+
+    if (validator.isStrongPassword(value, {
+      minLength: 6, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+      setisvalidP(true);
+    } else {
+      setisvalidP(false);
+    }
+  }
   const [details, setDetails] = useState(
     {
       "firstName": "",
@@ -24,6 +41,44 @@ export function Signup() {
       return { ...prev, [name]: value }
     })
 
+  }
+  const handleChangeEmail = (event) => {
+    const { name, value } = event.target;
+    if (!isValidEmail(value)) {
+      const validationSymbol = document.querySelector('.validation-symbol');
+            validationSymbol.classList.remove('valid');
+    }
+    else {
+      axios.post(`${API_URL}verify`, details)
+        .then((Response) => {
+          if (Response.data.message === "Valid") {
+            setDetails((prev) => {
+              return { ...prev, [name]: value }
+            })
+            const validationSymbol = document.querySelector('.validation-symbol');
+            validationSymbol.classList.add('valid');
+          }
+          else {
+            alert(Response.data.message);
+          }
+        })
+        .catch(e => console.log("Error"))
+    }
+  }
+  const handleChangePass = (event) => {
+    const { name, value } = event.target;
+    validate(value);
+    if (isvalidP) {
+      setDetails((prev) => {
+        return { ...prev, [name]: value }
+      })
+      const validationSymbolp = document.querySelector('.passvalid');
+      validationSymbolp.classList.add('valid');
+    }
+    else{
+      const validationSymbolp = document.querySelector('.passvalid');
+      validationSymbolp.classList.remove('valid');
+    }
   }
   const handleInput = (event) => {
     event.preventDefault();
@@ -84,8 +139,8 @@ export function Signup() {
                     <div class="col-md-6 mb-4 d-flex align-items-center">
 
                       <div class="form-outline datepicker w-100">
-                        <input type="text" class="form-control form-control-lg" name='email' placeholder='Email' onChange={handleChange} />
-
+                        <div class="validation-symbol" is></div>
+                        <input type="text" class="form-control form-control-lg" name='email' placeholder='Email' onKeyUp={handleChangeEmail} isvalidE />
                       </div>
 
                     </div>
@@ -114,7 +169,8 @@ export function Signup() {
                     <div class="col-md-6 mb-4 pb-2">
 
                       <div class="form-outline">
-                        <input type="password" name="password" class="form-control form-control-lg" placeholder='Password' onChange={handleChange} />
+                      <div class="validation-symbol passvalid" is></div>
+                        <input type="password" name="password" class="form-control form-control-lg" placeholder='Password' onChange={handleChangePass} isvalidP />
 
                       </div>
 

@@ -20,3 +20,54 @@
      .card-registration .select-arrow {
      top: 13px;
      }
+     .validation-symbol {
+          position: absolute;
+          top: 48%;
+          left: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          background-color: red; /* Default color */
+          border-radius: 50%;
+        }
+        
+        .validation-symbol::before {
+          content: "\2714"; /* Unicode for checkmark symbol */
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: white;
+          font-size: 16px;
+          text-align: center;
+          line-height: 20px;
+        }
+        
+        .validation-symbol.valid {
+          background-color: green; /* Green color when valid */
+        }
+        
+        .passvalid {
+          position: absolute;
+          top: 63%;
+          left: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          background-color: red; /* Default color */
+          border-radius: 50%;
+        }
+        
+        .passvalid::before {
+          content: "\2714"; /* Unicode for checkmark symbol */
+          display: block;
+          width: 100%;
+          height: 100%;
+          color: white;
+          font-size: 16px;
+          text-align: center;
+          line-height: 20px;
+        }
+        
+        .passvalid.valid {
+          background-color: green; /* Green color when valid */
+        }

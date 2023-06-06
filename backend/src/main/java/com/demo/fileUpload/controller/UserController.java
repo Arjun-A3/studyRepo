@@ -39,4 +39,15 @@ public class UserController {
         return ResponseEntity.badRequest().body(new messageResponse("Signin failed"));
 
     }
+    @PostMapping("/verify")
+    public ResponseEntity<?> verify (@RequestBody signup signup){
+        List<Authentication> list = repository.findAll();
+        String email = signup.getEmail();
+        for(int i=0;i< list.size();i++){
+            if(email.equals(list.get(i).getEmail())){
+                return ResponseEntity.badRequest().body(new messageResponse("Email alredy exist"));
+            }
+        }
+        return ResponseEntity.ok().body(new messageResponse("Valid"));
+    }
 }

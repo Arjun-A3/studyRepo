@@ -15,22 +15,11 @@ import ContactUs from './contactus/ContactUs';
 
 
 
-// const getCacheData = async (cacheName, url) => {
-//   if (typeof caches === 'undefined') return null;
-//   const cacheStorage = await caches.open(cacheName);
-//   const cachedResponse = await cacheStorage.match(url);
-//   if (!cachedResponse || !cachedResponse.ok) {
-//     return null;
-//   } else {
-//     const data = await cachedResponse.json();
-//     return data;
-//   }
-// };
+
 
 
 function App() {
   const Logout = () => {
-    // caches.keys().then((names)=>{names.forEach((name)=>{caches.delete(name);})})
     localStorage.clear();
     window.location.reload();
   }
@@ -38,38 +27,7 @@ function App() {
     document.body.style.zoom = "80%";
   }, []);
   
-  //  useEffect(() => {
-  //   const data = window.localStorage.getItem('User');
-  //   if ( data !== null ) setuser(data);
-  // });
   
-  // const [user,setuser] = useState("");
-  //   useEffect(()=>{
-  //   getCacheData('userInfo','http://localhost:3000');
-  // })
-  // const getCacheData = async(cacheName , url) =>{
-  //   if( typeof caches === 'undefined') return false;
-  //   const cacheStorage = await caches.open(cacheName);
-  //   const cachedResponse = await cacheStorage.match(url);
-  //   if(!cachedResponse ||!cachedResponse.ok)
-  //   {
-  //     setuser("Not allowed")
-  //   }
-  //   else{
-  //     cachedResponse.json().then((item)=>{setuser(item)}) // in this line the item is updating to the chache value but user is not getting updated
-  //   }
-  //   alert(user);
-  // }
-  // useEffect(() => {
-  //   (async () => {
-  //     const data = await getCacheData('userInfo', 'http://localhost:3000');
-  //     if (data !== null) {
-  //       setuser(data);
-  //     } else {
-  //       setuser('Not allowed');
-  //     }
-  //   })();
-  // },);
   return (
     <div className="App">
       {( localStorage.getItem('User') === "Student" || localStorage.getItem('User') === "Faculty") && (
